@@ -1,37 +1,103 @@
-# Luma Restaurant Website
+# 🍽️ Luma — Restaurant Website
 
-A complete responsive restaurant website built with plain HTML, CSS, and JavaScript.
+A modern, elegant multi-page restaurant website for the fictional restaurant **Luma** in Colombo, Sri Lanka.
 
-## Files
+The website uses clean HTML, CSS, and JavaScript with responsive layouts, premium visuals, smooth animations, and separate pages for the main restaurant experience.
 
-- `index.html` — homepage with hero, gallery, features, hours, and CTA
-- `menu/index.html` — separate menu page with dynamic category filtering and chef signatures
-- `about/index.html` — separate about page
-- `contact/index.html` — separate contact page with secure backend endpoint integration
-- `styles.css` — responsive modern styling
-- `script.js` — navigation, gallery lightbox, dynamic menu tabs, reveal animations, and local form validation
-- `favicon.svg` — site icon
-- `robots.txt` — crawler rules
-- `sitemap.xml` — basic sitemap placeholder
+## ✨ Features
 
-## Run locally
+- Modern restaurant homepage
+- Dedicated menu page with dynamic category filtering
+- About Us page with restaurant story, philosophy, experience highlights, and animated counters
+- Contact Us page with contact information and message form
+- Premium responsive footer across all pages
+- Mobile-friendly navigation with hamburger menu
+- Responsive desktop, tablet, and mobile design
+- SEO-friendly metadata and sitemap
+- Luma logo and favicon
+- High-quality Unsplash demo imagery
 
-Open `index.html` directly in a browser, or serve the folder with any static server.
+## 📄 Pages
 
-Example with Node.js:
+- **Home** — Hero, gallery, Why Choose Luma, opening hours, and CTA sections
+- **Menu** — Category tabs, menu item cards, LKR prices, dietary labels, popular badges, and Chef's Signatures
+- **About Us** — Our Story, restaurant philosophy, Luma experience, and animated statistics
+- **Contact Us** — Restaurant address, opening hours, and secure contact form UI
 
-```bash
-node -e "const http=require('http'),fs=require('fs'),path=require('path');const types={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.txt':'text/plain','.xml':'application/xml'};http.createServer((req,res)=>{let p=req.url==='/'?'index.html':req.url.slice(1);fs.readFile(p,(e,d)=>{if(e){res.writeHead(404);res.end('not found')}else{res.writeHead(200,{'Content-Type':types[path.extname(p)]||'application/octet-stream'});res.end(d)}})}).listen(4173,'127.0.0.1',()=>console.log('http://127.0.0.1:4173'))"
+## 📂 Project Structure
+
+```text
+Restaurant/
+├── index.html
+├── menu/
+│   └── index.html
+├── about/
+│   └── index.html
+├── contact/
+│   └── index.html
+├── styles.css
+├── script.js
+├── server.js
+├── logo.svg
+├── favicon.svg
+├── robots.txt
+├── sitemap.xml
+└── README.md
 ```
 
-SEO metadata and `sitemap.xml` currently use `https://rukshika01.github.io/Restaurant/`.
+## 🚀 Live Website
 
-## Contact form backend
+GitHub Pages URL:
 
-The contact form posts to a server-side endpoint at `/api/contact`. For secure email sending, run a backend with environment variables:
+https://rukshika01.github.io/Restaurant/
 
-- `RESEND_API_KEY`
-- `CONTACT_TO_EMAIL`
-- `CONTACT_FROM_EMAIL`
+SEO metadata and `sitemap.xml` currently use this GitHub Pages URL.
 
-No email API keys or SMTP credentials are stored in frontend JavaScript.
+## ⚙️ Running Locally
+
+Open `index.html` directly in a browser, or run the local Node server:
+
+```bash
+node server.js
+```
+
+Then open:
+
+```text
+http://127.0.0.1:4173/
+```
+
+## 📬 Contact Form Backend
+
+The contact form posts to a server-side endpoint:
+
+```text
+/api/contact
+```
+
+For secure email sending, the backend requires environment variables:
+
+```text
+RESEND_API_KEY
+CONTACT_TO_EMAIL
+CONTACT_FROM_EMAIL
+```
+
+No email address API keys, SMTP credentials, or secrets are exposed in frontend JavaScript.
+
+Note: GitHub Pages is static and cannot run `server.js`. For the contact form to actually send email, deploy the backend to a platform that supports server-side code, such as Vercel serverless functions or a Node hosting provider.
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Node.js local/server-side contact endpoint
+- Git & GitHub
+- GitHub Pages
+
+## 👩‍💻 Author
+
+**Rukshika**
+
+This project is intended for educational and portfolio purposes.
