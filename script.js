@@ -1,15 +1,9 @@
 const header = document.querySelector('[data-header]');
 const navToggle = document.querySelector('[data-nav-toggle]');
 const navMenu = document.querySelector('[data-nav-menu]');
-const form = document.querySelector('#reservation-form');
-const dateInput = document.querySelector('#date');
 const year = document.querySelector('#year');
 
 if (year) year.textContent = new Date().getFullYear();
-
-const today = new Date();
-today.setHours(0, 0, 0, 0);
-if (dateInput) dateInput.min = today.toISOString().split('T')[0];
 
 function updateHeader() {
   if (header) header.classList.toggle('scrolled', window.scrollY > 16);
@@ -132,36 +126,88 @@ if (menuTabs && menuItems) {
   renderMenu('Dinner');
 }
 
+document.querySelectorAll('[data-counter]').forEach((counter) => {
+  const target = Number(counter.dataset.counter);
+  const decimals = counter.dataset.counter.includes('.') ? 1 : 0;
+  let started = false;
+  const runCounter = () => {
+    if (started) return;
+    started = true;
+    const duration = 1200;
+    const start = performance.now();
+    const animate = (time) => {
+      const progress = Math.min((time - start) / duration, 1);
+      const value = target * (1 - Math.pow(1 - progress, 3));
+      counter.textContent = value.toFixed(decimals);
+      if (progress < 1) requestAnimationFrame(animate);
+      else counter.textContent = target.toFixed(decimals);
+    };
+    requestAnimationFrame(animate);
+  };
+  if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        runCounter();
+        counterObserver.disconnect();
+      }
+    }, { threshold: 0.4 });
+    counterObserver.observe(counter);
+  } else runCounter();
+});
+
 function setError(field, message) {
   const error = document.querySelector('#' + field.id + '-error');
   if (error) error.textContent = message;
   field.setAttribute('aria-invalid', message ? 'true' : 'false');
 }
-function validateForm() {
+const contactForm = document.querySelector('#contact-form');
+
+function validateContactForm() {
   let valid = true;
-  const name = form.elements.name;
-  const email = form.elements.email;
-  const date = form.elements.date;
-  const guests = form.elements.guests;
+  const name = contactForm.elements.name;
+  const email = contactForm.elements.email;
+  const message = contactForm.elements.message;
   if (name.value.trim().length < 2) { setError(name, 'Please enter your name.'); valid = false; } else setError(name, '');
   if (!email.validity.valid) { setError(email, 'Please enter a valid email address.'); valid = false; } else setError(email, '');
-  if (!date.value) { setError(date, 'Please choose a reservation date.'); valid = false; }
-  else {
-    const selected = new Date(date.value + 'T00:00:00');
-    if (selected < today) { setError(date, 'Please choose today or a future date.'); valid = false; } else setError(date, '');
-  }
-  if (!guests.value) { setError(guests, 'Please select your party size.'); valid = false; } else setError(guests, '');
+  if (message.value.trim().length < 1) { setError(message, 'Please enter your message.'); valid = false; } else setError(message, '');
   return valid;
 }
-if (form) {
-  form.addEventListener('submit', (event) => {
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const message = document.querySelector('#form-message');
-    if (message) message.textContent = '';
-    if (!validateForm()) return;
-    const firstName = form.elements.name.value.trim().split(' ')[0];
-    if (message) message.textContent = 'Thanks, ' + firstName + '! Your reservation request is ready. This demo form was validated locally and not sent to a server.';
-    form.reset();
-    if (dateInput) dateInput.min = today.toISOString().split('T')[0];
+    const status = document.querySelector('#form-message');
+    const button = contactForm.querySelector('button[type="submit"]');
+    if (status) {
+      status.textContent = '';
+      status.classList.remove('error-message');
+    }
+    if (!validateContactForm()) return;
+
+    button.disabled = true;
+    button.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: contactForm.elements.name.value.trim(),
+          email: contactForm.elements.email.value.trim(),
+          message: contactForm.elements.message.value.trim()
+        })
+      });
+      if (!response.ok) throw new Error('Send failed');
+      if (status) status.textContent = 'Thank you! Your message has been sent successfully.';
+      contactForm.reset();
+    } catch (error) {
+      if (status) {
+        status.textContent = "Sorry, we couldn't send your message. Please try again.";
+        status.classList.add('error-message');
+      }
+    } finally {
+      button.disabled = false;
+      button.textContent = button.dataset.defaultText || 'Send Message';
+    }
   });
 }

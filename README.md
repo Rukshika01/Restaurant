@@ -7,7 +7,7 @@ A complete responsive restaurant website built with plain HTML, CSS, and JavaScr
 - `index.html` — homepage with hero, gallery, features, hours, and CTA
 - `menu/index.html` — separate menu page with dynamic category filtering and chef signatures
 - `about/index.html` — separate about page
-- `contact/index.html` — separate contact/reservation page
+- `contact/index.html` — separate contact page with secure backend endpoint integration
 - `styles.css` — responsive modern styling
 - `script.js` — navigation, gallery lightbox, dynamic menu tabs, reveal animations, and local form validation
 - `favicon.svg` — site icon
@@ -24,4 +24,14 @@ Example with Node.js:
 node -e "const http=require('http'),fs=require('fs'),path=require('path');const types={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.txt':'text/plain','.xml':'application/xml'};http.createServer((req,res)=>{let p=req.url==='/'?'index.html':req.url.slice(1);fs.readFile(p,(e,d)=>{if(e){res.writeHead(404);res.end('not found')}else{res.writeHead(200,{'Content-Type':types[path.extname(p)]||'application/octet-stream'});res.end(d)}})}).listen(4173,'127.0.0.1',()=>console.log('http://127.0.0.1:4173'))"
 ```
 
-SEO metadata and `sitemap.xml` currently use the safe placeholder URL `https://rukshika01.github.io/Restaurant/`. Replace it with the final production domain before deployment.
+SEO metadata and `sitemap.xml` currently use `https://rukshika01.github.io/Restaurant/`.
+
+## Contact form backend
+
+The contact form posts to a server-side endpoint at `/api/contact`. For secure email sending, run a backend with environment variables:
+
+- `RESEND_API_KEY`
+- `CONTACT_TO_EMAIL`
+- `CONTACT_FROM_EMAIL`
+
+No email API keys or SMTP credentials are stored in frontend JavaScript.
