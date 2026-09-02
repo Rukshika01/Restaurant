@@ -1,4 +1,4 @@
-# 🍽️ Luna — Restaurant Website
+# 🍽️ Luma — Restaurant Website
 
 A modern and elegant **multi-page restaurant website** designed to provide a smooth and visually appealing experience for restaurant customers.
 
