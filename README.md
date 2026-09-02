@@ -1,27 +1,131 @@
-# Luma Restaurant Website
+# 🍽️ Luna — Restaurant Website
 
-A complete responsive restaurant website built with plain HTML, CSS, and JavaScript.
+A modern and elegant **multi-page restaurant website** designed to provide a smooth and visually appealing experience for restaurant customers.
 
-## Files
+The website focuses on clean design, responsive layouts, attractive food imagery, and easy navigation across different sections of the restaurant.
 
-- `index.html` — homepage with hero, gallery, features, hours, and CTA
-- `menu/index.html` — separate menu page with dynamic category filtering and chef signatures
-- `about/index.html` — separate about page
-- `contact/index.html` — separate contact/reservation page
-- `styles.css` — responsive modern styling
-- `script.js` — navigation, gallery lightbox, dynamic menu tabs, reveal animations, and local form validation
-- `favicon.svg` — site icon
-- `robots.txt` — crawler rules
-- `sitemap.xml` — basic sitemap placeholder
+## ✨ Features
 
-## Run locally
+* 🏠 Modern restaurant homepage
+* 🍴 Menu page for showcasing dishes
+* 📖 Restaurant story / About page
+* 🖼️ Food and restaurant gallery
+* 📅 Reservation page
+* 📍 Visit Us / location information
+* 🕐 Opening hours section
+* 📱 Fully responsive design
+* 🎨 Clean and modern user interface
+* 🔗 Easy navigation between pages
+* 📷 High-quality restaurant imagery
 
-Open `index.html` directly in a browser, or serve the folder with any static server.
+## 📄 Pages
 
-Example with Node.js:
+The website includes multiple pages:
 
-```bash
-node -e "const http=require('http'),fs=require('fs'),path=require('path');const types={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.txt':'text/plain','.xml':'application/xml'};http.createServer((req,res)=>{let p=req.url==='/'?'index.html':req.url.slice(1);fs.readFile(p,(e,d)=>{if(e){res.writeHead(404);res.end('not found')}else{res.writeHead(200,{'Content-Type':types[path.extname(p)]||'application/octet-stream'});res.end(d)}})}).listen(4173,'127.0.0.1',()=>console.log('http://127.0.0.1:4173'))"
+* **Home** — Hero section, restaurant introduction, highlights, gallery preview, opening hours, and other key information.
+* **Menu** — Displays the restaurant's food and drink selections.
+* **Our Story** — Information about the restaurant, its concept, and background.
+* **Gallery** — Collection of food and restaurant images.
+* **Reservations** — Reservation section for customers.
+* **Visit Us** — Restaurant location and contact information.
+
+## 🎨 Design
+
+The website uses a modern restaurant aesthetic with:
+
+* Large hero imagery
+* Elegant typography
+* Spacious layouts
+* Food-focused visual sections
+* Responsive cards and grids
+* Clear calls-to-action
+* Mobile-friendly navigation
+
+## 🛠️ Technologies Used
+
+* **HTML5** — Website structure
+* **CSS3** — Styling and responsive layouts
+* **JavaScript** — Interactive functionality
+* **Git & GitHub** — Version control and project hosting
+* **GitHub Pages** — Website deployment
+
+## 📱 Responsive Design
+
+The website is designed to work across different screen sizes, including:
+
+* 💻 Desktop computers
+* 💻 Laptops
+* 📱 Mobile phones
+* 📲 Tablets
+
+## 🖼️ Images
+
+Restaurant and food imagery used throughout the website is sourced from **Unsplash**.
+
+Images are used for visual presentation and demonstration purposes.
+
+## 🚀 Live Website
+
+The project is deployed using GitHub Pages.
+
+**Live Demo:**
+https://rukshika01.github.io/Restaurant/
+
+## 📂 Project Structure
+
+```text
+Restaurant/
+│
+├── index.html
+├── menu.html
+├── story.html
+├── gallery.html
+├── reservations.html
+├── visit.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+└── images/
+    └── ...
 ```
 
-SEO metadata and `sitemap.xml` currently use the safe placeholder URL `https://rukshika01.github.io/Restaurant/`. Replace it with the final production domain before deployment.
+> The exact file structure may vary depending on the latest version of the project.
+
+## ⚙️ Running the Project Locally
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Rukshika01/Restaurant.git
+```
+
+### 2. Open the project
+
+Navigate into the project folder:
+
+```bash
+cd Restaurant
+```
+
+### 3. Run the website
+
+Open `index.html` in a web browser.
+
+For the best development experience, you can also use **VS Code Live Server** or another local development server.
+
+
+## 👩‍💻 Author
+
+**Rukshika**
+
+This project was created as a frontend web development project to demonstrate modern restaurant website design, responsive layouts, and interactive web development.
+
+## 📜 License
+
+This project is intended for educational and portfolio purposes.
+
+You are welcome to explore and modify the code for learning and development.
