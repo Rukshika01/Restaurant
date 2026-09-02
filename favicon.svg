@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Luma favicon">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1c86b"/>
+      <stop offset="0.55" stop-color="#c96f3d"/>
+      <stop offset="1" stop-color="#8f472b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="32" fill="#17120f"/>
+  <path d="M32 10c10 11 17 19 17 31 0 9-8 15-17 15s-17-6-17-15c0-12 7-20 17-31Z" fill="url(#g)"/>
+  <path d="M40 18c-9 3-15 11-15 22 0 7 3 12 8 16-10 0-18-7-18-16 0-12 7-20 17-30 3 3 6 6 8 8Z" fill="#fffaf3" opacity=".22"/>
+  <circle cx="32" cy="42" r="5" fill="#17120f" opacity=".86"/>
+</svg>
