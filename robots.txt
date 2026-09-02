@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://luma-restaurant.example/sitemap.xml
+Sitemap: https://rukshika01.github.io/Restaurant/sitemap.xml

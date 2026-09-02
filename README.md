@@ -24,4 +24,4 @@ Example with Node.js:
 node -e "const http=require('http'),fs=require('fs'),path=require('path');const types={'.html':'text/html','.css':'text/css','.js':'application/javascript','.svg':'image/svg+xml','.txt':'text/plain','.xml':'application/xml'};http.createServer((req,res)=>{let p=req.url==='/'?'index.html':req.url.slice(1);fs.readFile(p,(e,d)=>{if(e){res.writeHead(404);res.end('not found')}else{res.writeHead(200,{'Content-Type':types[path.extname(p)]||'application/octet-stream'});res.end(d)}})}).listen(4173,'127.0.0.1',()=>console.log('http://127.0.0.1:4173'))"
 ```
 
-SEO metadata and `sitemap.xml` currently use the safe placeholder URL `https://luma-restaurant.example/`. Replace it with the final production domain before deployment.
+SEO metadata and `sitemap.xml` currently use the safe placeholder URL `https://rukshika01.github.io/Restaurant/`. Replace it with the final production domain before deployment.
