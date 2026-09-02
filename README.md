@@ -4,9 +4,12 @@ A complete responsive restaurant website built with plain HTML, CSS, and JavaScr
 
 ## Files
 
-- `index.html` — SEO-friendly page structure and content
+- `index.html` — homepage with hero, gallery, features, hours, and CTA
+- `menu/index.html` — separate menu page with dynamic category filtering and chef signatures
+- `about/index.html` — separate about page
+- `contact/index.html` — separate contact/reservation page
 - `styles.css` — responsive modern styling
-- `script.js` — navigation, tabs, reveal animations, and local form validation
+- `script.js` — navigation, gallery lightbox, dynamic menu tabs, reveal animations, and local form validation
 - `favicon.svg` — site icon
 - `robots.txt` — crawler rules
 - `sitemap.xml` — basic sitemap placeholder
