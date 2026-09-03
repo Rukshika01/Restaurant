@@ -11,6 +11,26 @@ function updateHeader() {
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
+const heroImage = document.querySelector('.hero-image');
+const hoursBg = document.querySelector('.hours-bg');
+const ctaBg = document.querySelector('.cta-bg');
+
+function updateParallax() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const y = window.scrollY;
+  if (heroImage) heroImage.style.transform = 'scale(1.06) translateY(' + y * 0.08 + 'px)';
+  if (hoursBg) {
+    const rect = hoursBg.parentElement.getBoundingClientRect();
+    hoursBg.style.transform = 'scale(1.02) translateY(' + rect.top * -0.035 + 'px)';
+  }
+  if (ctaBg) {
+    const rect = ctaBg.parentElement.getBoundingClientRect();
+    ctaBg.style.transform = 'scale(1.04) translateY(' + rect.top * -0.025 + 'px)';
+  }
+}
+window.addEventListener('scroll', updateParallax, { passive: true });
+updateParallax();
+
 function closeMenu() {
   if (!navMenu || !navToggle) return;
   navMenu.classList.remove('open');
@@ -34,6 +54,7 @@ if (navToggle && navMenu) {
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     closeMenu();
+    closeLightbox();
   }
 });
 
@@ -52,6 +73,48 @@ document.querySelectorAll('.reveal').forEach((element) => {
   if (observer) observer.observe(element);
   else element.classList.add('visible');
 });
+
+const lightbox = document.querySelector('[data-lightbox]');
+const lightboxImg = document.querySelector('[data-lightbox-img]');
+const lightboxClose = document.querySelector('[data-lightbox-close]');
+let lastGalleryTrigger = null;
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.hidden = true;
+  document.body.classList.remove('menu-open');
+  if (lastGalleryTrigger) lastGalleryTrigger.focus();
+}
+
+document.querySelectorAll('[data-full]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const thumbnail = button.querySelector('img');
+    lastGalleryTrigger = button;
+    lightboxImg.src = button.dataset.full || thumbnail?.src || '';
+    lightboxImg.alt = thumbnail?.alt || 'Expanded gallery image';
+    lightbox.hidden = false;
+    document.body.classList.add('menu-open');
+    lightboxClose.focus();
+  });
+});
+if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+if (lightbox) lightbox.addEventListener('click', (event) => { if (event.target === lightbox) closeLightbox(); });
+
+function updateOpenStatus() {
+  const status = document.querySelector('[data-open-status]');
+  if (!status) return;
+  const now = new Date();
+  const day = now.getDay();
+  const minutes = now.getHours() * 60 + now.getMinutes();
+  const isTueSat = day >= 2 && day <= 6 && minutes >= 600 && minutes < 1380;
+  const isSunday = day === 0 && minutes >= 600 && minutes < 900;
+  const open = isTueSat || isSunday;
+  status.classList.toggle('is-open', open);
+  status.classList.toggle('is-closed', !open);
+  status.innerHTML = '<span aria-hidden="true"></span>' + (open ? 'OPEN NOW' : 'CLOSED NOW');
+}
+updateOpenStatus();
+window.setInterval(updateOpenStatus, 60000);
 
 const menuData = {
   Dinner: [

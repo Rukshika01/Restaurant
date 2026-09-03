@@ -64,13 +64,26 @@
     <section class="hero home-hero" aria-labelledby="hero-title">
       <div class="hero-image" aria-hidden="true"></div>
       <div class="container hero-grid single">
-        <div class="hero-content reveal">
-          <p class="eyebrow">Premium dining in Colombo</p>
-          <h1 id="hero-title">Luma</h1>
-          <p class="hero-copy tagline">Where Every Meal Becomes a Memory.</p>
-          <div class="hero-actions">
+        <div class="hero-content hero-load">
+          <p class="eyebrow hero-kicker">Premium dining in Colombo</p>
+          <h1 id="hero-title" class="hero-title">Luma</h1>
+          <p class="hero-copy tagline hero-tagline">Where Every Meal Becomes a Memory.</p>
+          <div class="hero-actions hero-button-wrap">
             <a class="btn btn-primary" href="menu/">View Menu</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro-editorial" aria-labelledby="intro-title">
+      <div class="container intro-editorial-grid">
+        <div class="intro-editorial-copy reveal">
+          <p class="eyebrow">More Than a Meal</p>
+          <h2 id="intro-title">A modern Colombo table with warmth, rhythm, and soul.</h2>
+        </div>
+        <div class="intro-editorial-text reveal">
+          <p>At Luma, seasonal ingredients, thoughtful cooking and warm hospitality come together to create memorable dining experiences. Our menus are shaped by Sri Lanka's coast, spice gardens, and the quiet elegance of contemporary restaurant craft.</p>
+          <a class="btn btn-primary" href="about/">Discover Our Story</a>
         </div>
       </div>
     </section>
@@ -78,16 +91,16 @@
     <section class="section gallery-section" aria-labelledby="gallery-title">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow">Gallery</p>
-          <h2 id="gallery-title">Moments at Luma</h2>
-          <p>Food, craft, celebration, and atmosphere from our Colombo dining room.</p>
+          <p class="eyebrow">A taste of Luma</p>
+          <h2 id="gallery-title">Food, craft, and atmosphere</h2>
+          <p>Glimpses of the plates, spaces, and people that shape evenings at Luma.</p>
         </div>
         <div class="gallery-grid reveal" data-gallery>
-          <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=75" alt="Elegant plated restaurant dish"><span>Food</span></div>
-          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=75" alt="Premium restaurant interior"><span>Interior</span></div>
-          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=700&q=75" alt="Modern cocktail bar"><span>Bar</span></div>
-          <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=900&q=75" alt="Private restaurant event table"><span>Events</span></div>
-          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=700&q=75" alt="Chef preparing food"><span>Chef</span></div>
+          <button class="gallery-item tall reveal" type="button" data-full="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=75" alt="Elegant plated restaurant dish"><span>Food</span><em>View</em></button>
+          <button class="gallery-item reveal" type="button" data-full="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=700&q=75" alt="Premium restaurant interior"><span>Interior</span><em>View</em></button>
+          <button class="gallery-item reveal" type="button" data-full="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=700&q=75" alt="Modern cocktail bar"><span>Bar</span><em>View</em></button>
+          <button class="gallery-item wide reveal" type="button" data-full="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=900&q=75" alt="Private restaurant event table"><span>Events</span><em>View</em></button>
+          <button class="gallery-item reveal" type="button" data-full="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=700&q=75" alt="Chef preparing food"><span>Chef</span><em>View</em></button>
         </div>
       </div>
     </section>
@@ -107,28 +120,36 @@
       </div>
     </section>
 
-    <section class="section hours-section" aria-labelledby="hours-title">
-      <div class="container narrow">
-        <div class="hours-card reveal">
-          <p class="eyebrow">Opening hours</p>
-          <h2 id="hours-title">Dine with us this week</h2>
-          <dl class="hours-list large">
-            <div><dt>Tuesday – Saturday</dt><dd>10:00 AM – 11:00 PM</dd></div>
-            <div><dt>Sunday Brunch</dt><dd>10:00 AM – 3:00 PM</dd></div>
-            <div><dt>Monday</dt><dd>Closed</dd></div>
-          </dl>
+    <section class="section hours-immersive reveal" aria-labelledby="hours-title" data-hours-section>
+      <div class="hours-bg" aria-hidden="true"></div>
+      <div class="hours-overlay" aria-hidden="true"></div>
+      <div class="container hours-editorial">
+        <div class="hours-heading reveal">
+          <p class="eyebrow">Opening Hours</p>
+          <h2 id="hours-title">Join us when the room begins to glow.</h2>
+          <div class="hours-rule" aria-hidden="true"></div>
+          <p class="live-status" data-open-status><span aria-hidden="true"></span>Checking hours</p>
         </div>
+        <dl class="hours-table" aria-label="Luma opening hours">
+          <div class="hours-row reveal"><dt>Tuesday – Saturday</dt><dd>10:00 AM – 11:00 PM</dd></div>
+          <div class="hours-row brunch-row reveal"><dt>Sunday Brunch <small>Sunday Brunch</small></dt><dd>10:00 AM – 3:00 PM</dd></div>
+          <div class="hours-row closed-row reveal"><dt>Monday</dt><dd>Closed</dd></div>
+        </dl>
       </div>
     </section>
 
-    <section class="section cta-section">
-      <div class="container cta-card reveal">
-        <h2>Ready to experience Luma?</h2>
-        <p>Explore our seasonal menu or contact us to plan your next visit.</p>
-        <div class="hero-actions center"><a class="btn btn-primary" href="menu/">Explore Menu</a><a class="btn btn-secondary dark" href="contact/">Contact Us</a></div>
+    <section class="section cta-atmospheric reveal">
+      <div class="cta-bg" aria-hidden="true"></div>
+      <div class="container cta-atmospheric-content">
+        <p class="eyebrow">Reserve the mood</p>
+        <h2>Ready for the Luma experience?</h2>
+        <p>Begin with the menu — then let the evening unfold.</p>
+        <a class="btn btn-primary" href="menu/">Explore Menu</a>
       </div>
     </section>
   </main>
+
+  <div class="lightbox" data-lightbox hidden><button type="button" class="lightbox-close" data-lightbox-close aria-label="Close image">×</button><img src="" alt="Expanded gallery image" data-lightbox-img></div>
 
   <footer class="site-footer premium-footer"><div class="container footer-premium-grid"><div><a class="logo" href="./" aria-label="Luma home"><img class="site-logo" src="logo.svg" alt="" width="220" height="64"><span class="logo-text">Luma</span></a><p>A premium modern restaurant in Colombo inspired by seasonal Sri Lankan ingredients and warm hospitality.</p><div class="social-links" aria-label="Social media links"><a href="#" aria-label="Instagram">⌾</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="TikTok">♪</a></div></div><div><h3>Quick Links</h3><ul class="footer-links stacked"><li><a href="./">Home</a></li><li><a href="menu/">Menu</a></li><li><a href="about/">About Us</a></li><li><a href="contact/">Contact Us</a></li></ul></div><div><h3>Opening Hours</h3><p>Tuesday – Saturday<br>10:00 AM – 11:00 PM</p><p>Sunday Brunch<br>10:00 AM – 3:00 PM</p><p>Monday: Closed</p></div><div><h3>Address</h3><p>42 Galle Road,<br>Colombo 03,<br>Sri Lanka</p></div></div><div class="container footer-bottom"><p>© <span id="year"></span> Luma. All rights reserved.</p></div></footer>
   <script src="script.js" defer></script>
