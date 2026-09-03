@@ -118,7 +118,7 @@ window.setInterval(updateOpenStatus, 60000);
 
 const menuData = {
   Dinner: [
-    ['Luma Seafood Curry', 'Lagoon prawns, reef fish, coconut, curry leaf, fragrant rice.', 'LKR 5,800', '🌶 GF', 'Popular', 'https://images.unsplash.com/photo-1565557623262-b51c2513a641a?auto=format&fit=crop&w=700&q=75'],
+    ['Luma Seafood Curry', 'Lagoon prawns, reef fish, coconut, curry leaf, fragrant rice.', 'LKR 5,800', '🌶 GF', 'Popular', 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=700&q=75'],
     ['Charcoal Grilled Sea Bass', 'Citrus butter, charred greens, herb sambol.', 'LKR 6,200', 'GF', 'Popular', 'https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=700&q=75'],
     ['Creamy Mushroom Pasta', 'Wild mushrooms, parmesan cream, cracked pepper.', 'LKR 3,900', '🌱', '', 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=75'],
     ['Beef Tenderloin', 'Potato purée, roasted shallot jus, seasonal greens.', 'LKR 6,500', 'GF', '', 'https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=75']
@@ -146,7 +146,7 @@ const menuData = {
   ],
   'Main Courses': [
     ['Grilled Sea Bass', 'Charred greens, citrus butter, herb sambol.', 'LKR 6,200', 'GF', '', 'https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=700&q=75'],
-    ['Sri Lankan Seafood Curry', 'Prawns, fish, mussels, coconut broth.', 'LKR 5,800', '🌶 GF', 'Popular', 'https://images.unsplash.com/photo-1565557623262-b51c2513a641a?auto=format&fit=crop&w=700&q=75'],
+    ['Sri Lankan Seafood Curry', 'Prawns, fish, mussels, coconut broth.', 'LKR 5,800', '🌶 GF', 'Popular', 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=700&q=75'],
     ['Beef Tenderloin', 'Potato purée, jus, seasonal vegetables.', 'LKR 6,500', 'GF', 'Popular', 'https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=700&q=75'],
     ['Truffle Risotto', 'Arborio rice, mushrooms, parmesan, truffle.', 'LKR 4,800', '🌱 GF', '', 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=700&q=75'],
     ['Creamy Mushroom Pasta', 'Hand-cut pasta, wild mushrooms, thyme cream.', 'LKR 3,900', '🌱', '', 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=700&q=75']
