@@ -37,7 +37,6 @@ Restaurant/
 │   └── index.html
 ├── styles.css
 ├── script.js
-├── server.js
 ├── logo.svg
 ├── favicon.svg
 ├── robots.txt
@@ -55,37 +54,11 @@ SEO metadata and `sitemap.xml` currently use this GitHub Pages URL.
 
 ## ⚙️ Running Locally
 
-Open `index.html` directly in a browser, or run the local Node server:
+Open `index.html` directly in a browser, or use any static file server / VS Code Live Server.
 
-```bash
-node server.js
-```
+## 📬 Contact Form
 
-Then open:
-
-```text
-http://127.0.0.1:4173/
-```
-
-## 📬 Contact Form Backend
-
-The contact form posts to a server-side endpoint:
-
-```text
-/api/contact
-```
-
-For secure email sending, the backend requires environment variables:
-
-```text
-RESEND_API_KEY
-CONTACT_TO_EMAIL
-CONTACT_FROM_EMAIL
-```
-
-No email address API keys, SMTP credentials, or secrets are exposed in frontend JavaScript.
-
-Note: GitHub Pages is static and cannot run `server.js`. For the contact form to actually send email, deploy the backend to a platform that supports server-side code, such as Vercel serverless functions or a Node hosting provider.
+The contact form UI is included for the frontend demo. This repository is configured as a static frontend deployment and does not include a backend email service.
 
 ## 🛠️ Technologies Used
 
